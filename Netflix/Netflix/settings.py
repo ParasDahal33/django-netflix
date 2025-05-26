@@ -113,10 +113,10 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabase',
-        'USER': 'myuser',
-        'PASSWORD': 'mypassword',
-        'HOST': 'db',  # This matches the MySQL service name in docker-compose
+        'NAME': 'database-1',
+        'USER': 'admin',
+        'PASSWORD': 'Mypassword1!',
+        'HOST': 'database-1.c1i8s4osyie3.ap-southeast-2.rds.amazonaws.com',  # This matches the MySQL service name in docker-compose
         'PORT': '3306',
     }
 }
