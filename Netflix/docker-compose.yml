@@ -1,5 +1,4 @@
-# docker-compose.yml
-version: '3.9'
+version: '3.8'
 
 services:
   web:
@@ -13,8 +12,17 @@ services:
       - db
 
   db:
-    image: postgres
+    image: mysql:8.0
     environment:
-      POSTGRES_DB: mydb
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  
+volumes:
+  mysql_data:
